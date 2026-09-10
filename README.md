@@ -37,11 +37,11 @@ This repository uses a 26-week schedule so the shorter website plan can be expan
 
 | Status | Practice |
 | --- | --- |
-| Done | Palindrome checking with string reversal |
-| Done | Min-heap behavior using `priority_queue` |
-| Done | Sorting records with multiple tie-breakers |
-| Done | Josephus simulation with PBDS order statistics |
-| Next | Queue arrangement implementation |
+| Done | Sorting and basic array processing |
+| Done | Josephus simulation, queries, and fast recurrence |
+| Done | Maximum subarray sum |
+| Done | Queues, deques, sliding windows, and priority queues |
+| In progress | Add explanations and tests alongside solutions |
 
 Solutions are currently grouped in [`1_Foundation_and_Toolkit`](1_Foundation_and_Toolkit/).
 
@@ -50,11 +50,13 @@ Solutions are currently grouped in [`1_Foundation_and_Toolkit`](1_Foundation_and
 ```text
 .
 ├── 1_Foundation_and_Toolkit/
-│   ├── P_1160_Queue_Arrangement.cpp
-│   ├── P_1996_约瑟夫问题.cpp
-│   ├── Palindromes_easy_version.cpp
-│   ├── 堆.cpp
-│   └── 奖学金.cpp
+│   ├── Age_Sort.cpp
+│   ├── Josephus_Problem*.cpp
+│   ├── Josephus_Queries.cpp
+│   ├── Max_Sum.cpp
+│   └── Luogu/
+│       ├── Chinese-named queue and sliding-window solutions
+│       └── additional practice problems
 ├── .gitignore
 └── README.md
 ```
@@ -74,9 +76,9 @@ The solutions use GNU C++17-style headers and are intended for competitive-progr
 
 ```bash
 g++ -std=c++17 -O2 -Wall -Wextra \
-	1_Foundation_and_Toolkit/Palindromes_easy_version.cpp \
-	-o /tmp/palindrome
-/tmp/palindrome
+	1_Foundation_and_Toolkit/Age_Sort.cpp \
+	-o /tmp/age_sort
+/tmp/age_sort < input.txt
 ```
 
 Replace the source path with the problem you want to test. Some solutions use GNU extensions such as PBDS, so compile with `g++` rather than a strictly portable C++ compiler.
