@@ -1,0 +1,39 @@
+#include <bits/stdc++.h>
+#define int long long
+using namespace std;
+#define endl "\n"
+#define all(x) x.begin(), x.end()
+#ifndef ONLINE_JUDGE
+#define dout(...) cerr << "Line:" << __LINE__ << " [" << #__VA_ARGS__ << "] = ["; _print(__VA_ARGS__)
+#else
+#define dout(...)
+#endif
+signed main() {
+    ios_base::sync_with_stdio(false);
+    cin.tie(NULL), cout.tie(NULL);
+    int n, m;
+    cin >> n >> m;
+
+    multiset<int> ticket;
+    for (int i = 0; i < n; i++) {
+        int x;
+        cin >> x;
+        ticket.insert(x);
+    }
+    dout(ticket);
+
+    for (int i = 0; i < m; i++) {
+        int x;
+        cin >> x;
+
+        auto it = ticket.upper_bound(x);
+        if (it == ticket.begin()) {
+            cout << -1 << endl;
+        } else {
+            --it;
+            cout << *it << endl;
+            ticket.erase(it);
+        }
+    }
+    return 0;
+}
